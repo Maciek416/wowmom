@@ -1,6 +1,8 @@
 wowmom
 ======
 
+[![NPM](https://nodei.co/npm/wowmom.png)](https://nodei.co/npm/wowmom/)
+
 A wowmom text transformation module for nodejs ... You really had to be there.
 
 
