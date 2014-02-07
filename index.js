@@ -6,13 +6,8 @@ var trans = {
 };
 
 module.exports = function(text) {
-  if (text.replace(/w|o|m/gi,'').trim().length === 0 && text.length !== 0) {
-    return text.split('').map(function(ch) {
-      if (trans.hasOwnProperty(ch)) {
-        return trans[ch];
-      } else {
-        return ch;
-      }
-    }).join('');
-  }
+  var regex = /(m|w)(\s*o\s*)(m|w)/gi;
+  return text.replace(regex, function(match, first, mid, last) {
+    return trans[first] + mid + trans[last];
+  });
 };
