@@ -17,5 +17,7 @@ test('wowmom', function (t) {
   t.equals(wowmom('w:o:w m_O_m M  O  M'), 'm:o:m w_O_w W  O  W')
   t.equals(wowmom('m_O_m'), 'w_O_w')
   t.equals(wowmom('w0w'), 'm0m')
+  t.equals(wowmom('wooooowmom'), 'mooooomwow')
+  t.equals(wowmom('woOow'), 'moOom')
   t.end();
 });
