@@ -1,11 +1,23 @@
+var test = require('tape').test;
+
 var wowmom = require('./index');
 
-console.log(wowmom('wow') === 'mom');
-console.log(wowmom('wwwwwowwwwww') === 'mmmmmommmmmm');
-console.log(wowmom('wmwmwowmwmwm') === 'mwmwmomwmwmw');
-console.log(wowmom('w o w') === 'm o m');
-console.log(wowmom('m o m') === 'w o w');
-console.log(wowmom('M O M') === 'W O W');
-console.log(wowmom('W  O  W   M  O  M') === 'M  O  M   W  O  W');
-console.log(wowmom('wow really?') === 'mom really?');
-console.log(wowmom('hi mom') === 'hi wow');
+test('wowmom', function (t) {
+  t.equals(wowmom('wow'), 'mom');
+  t.equals(wowmom('wwwwwowwwww'), 'mmmmmommmmm');
+  // This one no longer supported...
+  //t.equals(wowmom('wmwmwowmwmwm'), 'mwmwmomwmwmw');
+  t.equals(wowmom('w o w'), 'm o m');
+  t.equals(wowmom('m o m'), 'w o w');
+  t.equals(wowmom('M O M'), 'W O W');
+  t.equals(wowmom('W  O  W   M  O  M'), 'M  O  M   W  O  W');
+  t.equals(wowmom('wow really?'), 'mom really?');
+  t.equals(wowmom('hi mom'), 'hi wow');
+  t.equals(wowmom('woman'), 'woman')
+  t.equals(wowmom('w:o:w m_O_m M  O  M'), 'm:o:m w_O_w W  O  W')
+  t.equals(wowmom('m_O_m'), 'w_O_w')
+  t.equals(wowmom('w0w'), 'm0m')
+  t.equals(wowmom('wooooowmom'), 'mooooomwow')
+  t.equals(wowmom('woOow'), 'moOom')
+  t.end();
+});

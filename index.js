@@ -11,10 +11,10 @@ function trans(letter){
 }
 
 module.exports = function(text) {
-  var regex = /([mw]+)(\s*o\s*)([mw]+)/gi;
-  return text.replace(regex, function(match, first, mid, last) {
+  var regex = /(([wm])\2*)([^a-zA-Z]*)([o0]+)(\3)(\1)/gi;
+  return text.replace(regex, function (str, first, garbage, sep, oh, sep2, last, idx, full) {
     var firstTrans = first.split('').map(trans).join('');
     var lastTrans = last.split('').map(trans).join('');
-    return firstTrans + mid + lastTrans;
+    return firstTrans + sep + oh + sep + lastTrans;
   });
 };
