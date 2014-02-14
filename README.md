@@ -17,8 +17,8 @@ console.log(wowmom('M O M'));
 console.log(wowmom('W  O  W   M  O  M'));
 console.log(wowmom('wow really?'));
 console.log(wowmom('hi mom'));
-console.log(wowmom('wwwwwowwwwww'));
-console.log(wowmom('wmwmwowmwmwm'));
+console.log(wowmom('wooooowmom'));
+console.log(wowmom('woOow'));
 
 // Output:
 // mom
@@ -28,7 +28,7 @@ console.log(wowmom('wmwmwowmwmwm'));
 // M  O  M   W  O  W
 // mom really?
 // hi wow
-// mmmmmommmmmm
-// mwmwmomwmwmw
+// mooooomwow
+// moOom
 
 ```
